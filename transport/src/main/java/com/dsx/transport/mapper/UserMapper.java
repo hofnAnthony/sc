@@ -1,13 +1,14 @@
 package com.dsx.transport.mapper;
 
 import com.dsx.transport.model.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @author ydy
  */
-
+@Repository
 public interface UserMapper {
 
     /**
@@ -44,4 +45,19 @@ public interface UserMapper {
      * @return
      */
     void delete(Long id);
+
+    /**
+     * get password
+     *
+     * @param username 用户名
+     */
+    String getPassword(String username);
+
+    /**
+     * 获得角色权限
+     *
+     * @param username 用户名
+     * @return user/admin
+     */
+    String getRole(String username);
 }

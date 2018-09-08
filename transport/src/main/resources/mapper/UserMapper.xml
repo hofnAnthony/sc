@@ -3,12 +3,12 @@
 <mapper namespace="com.dsx.transport.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.dsx.transport.model.User">
         <id column="id" property="id" jdbcType="VARCHAR"/>
-        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, name, password
+        id, username, password
     </sql>
 
     <select id="getAll" resultMap="BaseResultMap">
@@ -27,16 +27,16 @@
     <insert id="insert" parameterType="com.dsx.transport.model.User">
         INSERT INTO
          "public"."User"
-        (id,name,password)
+        (id,username,password)
         VALUES
-        (#{id} ,#{name}, #{password})
+        (#{id} ,#{username}, #{password})
     </insert>
 
     <update id="update" parameterType="com.dsx.transport.model.User">
         UPDATE
         User
         SET
-        <if test="name != null">name = #{name},</if>
+        <if test="username != null">username = #{username},</if>
         <if test="password != null">password = #{password},</if>
         WHERE
         id = #{id}
@@ -48,5 +48,6 @@
         WHERE
         id =#{id}
     </delete>
+
 
 </mapper>

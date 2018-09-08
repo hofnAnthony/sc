@@ -46,11 +46,11 @@ public class AppController {
         User user = new User();
         String uuid = String.valueOf(UUID.randomUUID());
         user.setId(uuid);
-        user.setName(name);
+        user.setUsername(name);
         user.setPassword(password);
         userMapper.insert(user);
 
-        redisTemplate.opsForValue().set(user.getId(), user.getName(), expires, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(user.getId(), user.getUsername(), expires, TimeUnit.SECONDS);
 
         return "success";
     }
