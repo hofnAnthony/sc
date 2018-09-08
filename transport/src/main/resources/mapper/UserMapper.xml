@@ -49,5 +49,16 @@
         id =#{id}
     </delete>
 
+    <select id="getPassword" parameterType="String" resultType="String">
+        SELECT password
+        FROM  "public"."User"
+        WHERE username = #{username}
+    </select>
+
+    <select id="getRole" parameterType="String" resultType="String">
+        SELECT role
+        FROM  "public"."User"
+        WHERE username = #{username}
+    </select>
 
 </mapper>

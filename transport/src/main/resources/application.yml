@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8088
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -41,8 +41,6 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.dsx.transport.model
-# web config temp
-thymeleaf:
-   cache: false
-   mode: LEGACYHTML5
+
+
 
